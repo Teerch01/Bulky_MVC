@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -44,6 +45,8 @@ public class Product
 
     [ForeignKey("CategoryId")]
     public Category? Category {  get; set; }
-    public string? ImageUrl { get; set; }
+
+    [ValidateNever]
+    public List<ProductImage> ProductImages { get; set; }
 
 }

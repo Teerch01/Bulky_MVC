@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bulky.DataAccess", "Bulky.DataAccess\Bulky.DataAccess.csproj", "{7C671F75-5505-42C3-A7B9-D1ED16A3EBFA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CE08832F-5D71-4039-830E-4CDC2AD7DC11} = {CE08832F-5D71-4039-830E-4CDC2AD7DC11}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bulky.Models", "Bulky.Models\Bulky.Models.csproj", "{4B5A81E2-F7CC-4DAA-9520-CF8354147423}"
 EndProject
