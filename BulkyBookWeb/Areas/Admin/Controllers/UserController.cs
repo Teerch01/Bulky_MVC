@@ -1,5 +1,4 @@
-﻿using Bulky.DataAccess.Data;
-using Bulky.DataAccess.Repository.IRepository;
+﻿using Bulky.DataAccess.Repository.IRepository;
 using Bulky.Models;
 using Bulky.Models.ViewModels;
 using Bulky.Utility;
@@ -7,7 +6,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 
 namespace BulkyBookWeb.Areas.Admin.Controllers;
 
@@ -71,7 +69,7 @@ public class UserController(IUnitOfWork unit, UserManager<IdentityUser> userMana
         }
         else
         {
-            if(oldRole == SD.Role_Company && user.CompanyId != UpdatedUser.CompanyId)
+            if (oldRole == SD.Role_Company && user.CompanyId != UpdatedUser.CompanyId)
             {
                 user.CompanyId = UpdatedUser.CompanyId;
                 unit.ApplicationUser.Update(user);

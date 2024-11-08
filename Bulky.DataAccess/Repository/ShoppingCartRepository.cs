@@ -8,6 +8,6 @@ public class ShoppingCartRepository(ApplicationDbContext db) : Repository<Shoppi
 {
     public void Update(ShoppingCart shoppingCart)
     {
-       db.ShoppingCarts.Update(shoppingCart);
+        db.ShoppingCarts.Update(shoppingCart);
     }
 }

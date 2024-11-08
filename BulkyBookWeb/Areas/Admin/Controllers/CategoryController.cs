@@ -20,6 +20,7 @@ public class CategoryController(IUnitOfWork unit) : Controller
     {
         return View();
     }
+
     [HttpPost]
     public IActionResult Create(Category category)
     {

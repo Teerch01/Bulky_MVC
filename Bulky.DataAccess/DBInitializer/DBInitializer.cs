@@ -18,7 +18,7 @@ public class DBInitializer(UserManager<IdentityUser> userManager, RoleManager<Id
                 db.Database.Migrate();
             }
         }
-        catch(Exception ex) { }
+        catch (Exception ex) { }
 
         //create roles if they are not created
         if (!roleManager.RoleExistsAsync(SD.Role_Customer).GetAwaiter().GetResult())

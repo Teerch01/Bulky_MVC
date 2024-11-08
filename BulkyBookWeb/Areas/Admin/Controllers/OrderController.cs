@@ -39,7 +39,7 @@ public class OrderController(IUnitOfWork unit) : Controller
         OrderVM.orderDetail = unit.OrderDetail.GetAll(includeProperties: "Product")
                                           .Where(u => u.OrderHeaderId == OrderVM.OrderHeader.Id);
 
-        var domain = Request.Scheme + "://"+ Request.Host.Value +"/";
+        var domain = Request.Scheme + "://" + Request.Host.Value + "/";
         var options = new SessionCreateOptions
         {
             SuccessUrl = domain + $"admin/order/PaymentConfirmation?orderHeaderId={OrderVM.OrderHeader.Id}",
@@ -158,7 +158,7 @@ public class OrderController(IUnitOfWork unit) : Controller
         TempData["success"] = "Order Shipped successfully";
         return RedirectToAction(nameof(Details), new { orderId = OrderVM.OrderHeader.Id });
     }
-    
+
     [HttpPost]
     [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Employee)]
     public IActionResult CancelOrder()

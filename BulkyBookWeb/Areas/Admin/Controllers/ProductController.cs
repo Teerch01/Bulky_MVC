@@ -149,9 +149,9 @@ public class ProductController(IUnitOfWork unit, IWebHostEnvironment webHost) : 
     {
         var image = unit.ProductImage.Get(u => u.Id == imageId);
         var productid = image.ProductId;
-        if(image != null)
+        if (image != null)
         {
-            if(!string.IsNullOrEmpty(image.ImageUrl))
+            if (!string.IsNullOrEmpty(image.ImageUrl))
             {
                 var oldImagePath = Path.Combine(webHost.WebRootPath,
                     image.ImageUrl.TrimStart('\\'));
@@ -168,7 +168,7 @@ public class ProductController(IUnitOfWork unit, IWebHostEnvironment webHost) : 
             TempData["success"] = "Image deleted Successfully";
         }
 
-        return RedirectToAction(nameof(Upsert), new {id = productid});
+        return RedirectToAction(nameof(Upsert), new { id = productid });
     }
 
     #region APICALLS
@@ -196,7 +196,7 @@ public class ProductController(IUnitOfWork unit, IWebHostEnvironment webHost) : 
         if (Directory.Exists(finalPath))
         {
             var files = Directory.GetFiles(finalPath);
-            foreach(var file in files)
+            foreach (var file in files)
             {
                 System.IO.File.Delete(file);
             }
