@@ -26,8 +26,8 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkSto
 //add google oauth
 builder.Services.AddAuthentication().AddGoogle(options =>
 {
-    options.ClientId = "157611777417-9gf6i1bll468epu9am4j70vskjs3eskq.apps.googleusercontent.com";
-    options.ClientSecret = "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";
+    options.ClientId = "your id";
+    options.ClientSecret = "your secret";
 });
 
 
